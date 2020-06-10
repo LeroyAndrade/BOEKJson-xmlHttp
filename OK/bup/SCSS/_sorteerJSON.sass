@@ -1,0 +1,82 @@
+body
+ font-family: sans-serif, Arial
+
+#{$dot}#{$boekSelectie__}cover
+ max-width: #{$waarde1}#{$waarde0}#{$waarde0}px
+
+#{$dot}#{$boekSelectie__}rij--accent
+ background-color: #def
+
+#{$dot}#{$boekSelectie__}#{$data-cel}
+ #{$padding}: #{$waarde1}#{$em}
+ vertical-align: top
+
+#{$dot}#{$boekSelectie__}#{$data-cel}#{$nthchild}3)
+ #{$padding}: #{$waarde0}
+
+//layout van de sections
+#{$dot}#{$boekSelectie}
+ display: grid
+ grid-template-columns: auto 1fr auto  auto 
+ grid-gap: 1em
+ margin-bottom: 1em
+
+
+.boekSelectie:nth-child(even)
+ background-color: #eee
+ 
+
+#{$dot}#{$boekSelectie__}main
+ display: grid
+ grid-template-rows: auto  1fr auto
+ padding: .5em 0
+
+#{$dot}#{$boekSelectie__}titel
+ margin: 0
+
+#{$dot}#{$boekSelectie__}overig
+ margin: 0
+ font-size: .8em
+ color: #555
+
+#{$dot}#{$boekSelectie__}prijs
+ font-size: 2em
+ margin-bottom: .5em
+
+#{$dot}#{$boekSelectie__}knop
+ display: block
+ margin: 1.5em auto
+ background-color: red
+ cursor: pointer
+ color: #fff
+ padding: .5em 1em 1em
+ border-radius: 1em
+
+#{$dot}#{$boekSelectie__}knop:hover
+ background-color: #900
+
+#{$dot}winkelwagen
+ margin-top: 1em
+ width: #{$waarde3}#{$em}
+ height: #{$waarde3}#{$em}
+ background-image: url('.././afb/winkelwagen.svg')
+ background-size: contain
+ float: right
+ margin-right: #{$waarde3}em
+ background-repeat: no-repeat
+ position: relative
+
+ 
+
+#{$dot}winkelwagen__aantal:not(:empty) ///wanneer winkelwagen__aantal leeg, verstop deze klasse
+ background-color: #f00
+ ///inline-block, dan kan het afmetingen krijgen zoals padding
+ display: inline-block
+ color: #fff
+ position: absolute
+ top: -.5em
+ right: -.9em
+ line-height: .5em
+ padding: .2em
+ border-radius: 50%
+

@@ -1,0 +1,5 @@
+<?php
+
+$text = '[{"titel":"Groenten, DB","cover":".\\/afb\\/groenten-pakket.jpg","auteur":"L","uitgave":"Levenonderhoud","ean":"1","paginas":"1","taal":"9","prijs":"1"}]';
+
+?>

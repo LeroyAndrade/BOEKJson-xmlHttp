@@ -1,0 +1,100 @@
+body
+ background-color: #F1F1F1
+ height: 100vh
+ margin: 0 auto
+ padding: 0 auto
+ 
+#unchecked:checked ~ #menuOpen
+ display: inline
+
+header
+ width: 95vw
+
+ul
+ clear: both
+ width: auto
+ height: 80vh
+
+a:nth-child(2)
+ color: green
+ font-size: 2em
+
+li
+ list-style-type: none
+ line-height: 2em
+
+a
+ display: inline
+ text-decoration: none
+ margin-right: 150px 
+
+nav
+ padding-top: 15px
+ padding-left: 10px
+ background-color: #F1F1F1
+ position: fixed
+ top: 0
+ height: auto
+ width: 100%
+ z-index: 100
+ border-bottom: 1px solid grey
+ margin-bottom: 5px
+
+input[type="button"]#menuClosed1
+ text-align: center 
+ font-size: 1em
+ border-radius: 24%
+ background-color: #FFFFFF
+ float: left
+ border-bottom: 1px solid grey
+
+#menuClosed2
+ margin-left: 70px
+ margin-top: -1px
+
+#menuOpen
+ display: none
+ position: fixed
+ overflow: hidden 
+ padding-top: 25px
+ width: 80vw
+ background-color: #FFFFFF
+ height: 100vh
+ z-index: 10
+
+.pl-40
+ margin-left: 40px
+
+
+.pb-100 
+ padding-top: 100px
+
+#toggleLabel
+ float: left
+
+//menu button sluiten
+input[type="button"]#menuButtonOpen
+ padding: 0 auto
+ border-radius: 24%
+ width: 32px
+ height: 25px
+ font-size: 18px
+ float: right
+ margin-right: 40px
+
+
+figure, img
+ float: left
+
+#productenSectie
+ margin-top: 50px
+ z-index: 2
+
+input[type="button"]#menuButtonOpen
+ color: green
+
+#checkboxDefault:checked ~ #menuExpand
+ width: 80vw
+ height: 100%
+ background-color: blue
+ border: 10px solid blue

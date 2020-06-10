@@ -1,0 +1,56 @@
+body {
+  margin:0;
+  font-family:sans-serif, Arial;
+  background-color:green;
+  overflow-x:hidden;
+}
+h1{text-align:center; }
+
+/*checkbox, wanneer checked, dan vind debugger ergens in de code een 'main', en die zal je dan de volgende waardes geven*/
+#toggleMenu:checked ~ main{
+margin-left:10em;
+}
+img{
+  width: inherit;
+}
+#toggleLabel::before{
+  content:"\2630";
+}
+
+#toggleLabel{
+  font-size: 2em;
+  font-weight: 900;
+}
+
+/*The text-overflow is alleen beschikbaar in fireFox, daarom vind ik het niet nodig om extra resource ingebruik
+te nemen met @supports voor een functie voor maar 1 webbrowser.*/
+
+/*wanneer checked, vind je ergens in de code een <main>, waar in main een #toggleLabel bevomd. waarvan je de waarde van de label zal aanpassen*/
+/*Maar waarom wordt onderstaande code niet aangepast met: main label #toggleLabel::after ?*/
+/*oplossing zonder JS, geweldig!*/
+#toggleMenu:checked ~ main #toggleLabel::before{
+  content:"\2715";
+}
+#toggleLabel{
+  display: none;
+}
+
+/*! navigatie gaat mee met het scrollen ux friendly!*/
+nav{position: fixed;color:#FFF; background-color:red;}
+nav h4{text-align:center;}
+nav ul{margin:0; padding:0; list-style-type:none;border-bottom-color: blue;}
+nav li{border-bottom:1px solid #fff;}
+/*wanneer je werkt met padding: box-sizing, borderbox*/
+nav a{color:inherit; width:10em;text-decoration:none; display:block; padding:1em; background-color:#000; cursor:pointer;
+transition:  1s ease-out; box-sizing: border-box;cursor: pointer;}
+nav a:hover{background-color:#f1f1f1; color:pink;}
+nav a.actief{background-color:#000; color:pink; border-right: 1em solid  blue;}
+
+main{background:#fff; padding:2em;position: absolute;box-sizing: border-box;
+ transition:margin-left .3s cubic-bezier(.17,.67,.83,1.2); min-height: 100vh;
+ /*Waarom gaat het menu kleur (wit) naar 100vh in plaats van de main zelf?
+ De navigatie zit zelfs buiten de main*/
+ /*cubic-bezier(0,0,.25,1);*/
+}
+img{}
+.validatie img{}

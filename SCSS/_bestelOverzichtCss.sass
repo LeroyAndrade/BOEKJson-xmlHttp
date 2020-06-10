@@ -1,0 +1,73 @@
+#{$dot}#{$besteldItem}
+ display: grid
+ grid-template-columns: auto 1fr auto auto
+ grid-gap: 2em
+ margin-bottom: .5em
+
+
+#{$dot}#{$besteldItem__}cover
+ max-width: 50px
+ padding-bottom: .3em
+
+#{$dot}#{$besteldItem__}titel
+ font-weight: normal
+ font-size: 1em
+
+#{$dot}#{$besteldItem__}verwijderen
+ border-radius: .3em
+ width: 2em
+ height: 2em
+ background-image: url('.././afb/bin.svg')
+ background-size: contain
+ background-repeat: no-repeat
+ cursor: pointer
+ background-color: #fff 
+ transition: background-color 1s ease-out
+
+#{$dot}#{$besteldItem__}verwijderen:hover
+ background-color: red
+ width: 1.5em
+
+
+@media screen and (min-width: 40em) //960
+ #{$dot}#{$besteldItem}
+  max-width: 40em
+  margin: 0 auto
+
+
+@media screen and (min-width: 60em) //960
+ #uitvoer
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-column-gap: 2em
+
+ .boekSelectie:nth-child(even)
+  background-color: inherit 
+
+ .boekSelectie:nth-child(4n+2), .boekSelectie:nth-child(4n+3)
+  background-color: #eee  
+  
+@media screen and (min-width: 60em) //960
+ #uitvoer
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-column-gap: 2em
+
+ .boekSelectie:nth-child(even)
+  background-color: inherit 
+
+ .boekSelectie:nth-child(4n+2), .boekSelectie:nth-child(4n+3)
+  background-color: #eee  
+  
+@media screen and (max-width: 30em) //480
+ #uitvoer
+  display: grid
+  grid-template-columns: 1fr
+  grid-column-gap: 2em
+
+ .boekSelectie:nth-child(even)
+  background-color: inherit 
+
+ .boekSelectie:nth-child(4n+2), .boekSelectie:nth-child(4n+3)
+  background-color: #eee  
+  

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAA4B;EAC3B,SAAS,EAAE,KAAyB;;AAErC,2BAA6B;EAC5B,gBAAgB,EAAE,IAAI;;AAEvB,uBAA6B;EAC5B,OAAW,EAAE,GAAiB;EAC9B,cAAc,EAAE,GAAG;;AAEpB,oCAA2C;EAC1C,OAAW,EAAE,GAAiB",
+"sources": ["SCSS/_sorteerJSON.sass"],
+"names": [],
+"file": "style.css"
+}

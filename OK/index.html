@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf8">
+    <meta name="author" content="Leroy Andrade">
+    <meta name="content" content="Fro JSON/XHTML">
+    <meta name="description" content="Periode 4 leerjaar 2">
+    <meta name="keywords" content="Front-End, front-end. Front-end, front end, Front end, Frontend">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Overzicht</title>
+</head> 
+    <body lang="nl">
+
+<?php
+
+    try{
+          require 'includes/connectie.php';
+  
+
+$conn = mysqli_connect("localhost","root", "", "l1-p4-project");
+$sql = 'SELECT * FROM `boeken` LIMIT 1 OFFSET 2';
+$result = mysqli_query($conn,$sql);
+$json_array = array();
+
+while($rows = mysqli_fetch_assoc($result))
+{
+    $json_array[] = $rows;
+}
+
+echo json_encode($json_array);
+echo '<pre>';
+print_r($json_array);
+echo '</pre>';
+
+
+$myfile = fopen("testfile.json", "w") or die("Unable to open file!");
+$txt = "John Doe\n";
+fwrite($myfile, $txt);
+$txt = "Jane Doe\n";
+fwrite($myfile, $txt);
+fclose($myfile);
+
+$statement = $connection->query($sql);
+/*
+$sql2 = mysqli_query($connection, $sql);
+var_dump($sql2."dump");
+*/
+
+
+ foreach ($statement as $row)?>
+<h1>Titel:&nbsp;<?php echo $row['titel'] ?></h1>
+<img src="<?php echo $row['cover']?>" alt="<?php echo $row['ean']?>">
+
+              <h1>Titel:&nbsp;<?php echo $row['auteur'] ?></h1>
+              
+              <h1>Album:&nbsp;<?php echo $row['paginas']?></h1>
+              <h1>Artiest:&nbsp;<?php echo $row['uitgave']?></h1>
+              <h1><a href="edit.php?id=<?php echo $row['taal']?>">edit</a>
+<?php 
+        } catch(PDOException $e){
+            echo 'Fout bij database verbinding: ' . $e->getMessage() . ' op regel '.$e->getLine() . ' in ' . $e->getFile();
+        }
+ ?>
+
+
+        <a href="bestelOverzicht.html">
+            <div class="winkelwagen">
+                <span class="winkelwagen__aantal"></span>
+            </div>
+        </a>
+        CTRL+F5 voor nieuwe afbeeldingen
+        <br>-verwijderbug
+        <br>+correcte afbeeldingen
+        <br>+Totaal bedrag
+        <br>~aanpassen zodat totaal bedrag er eenmaal in komt te staan
+        <br>~aanpassen overige data naar actuele producten
+        <h1>Selectie boeken</h1>
+            <select id="kenmerk">
+                <option value="titelUppercase" selected>titel</option>
+                <option value="sortAuteur">auteur</option>
+                <option value="jsDatum">Datum uitgave</option>
+                <option value="paginas">Aantal Bladzijden&#39;s</option>
+                <option value="taal">Taal</option>
+                <option value="prijs">Prijs</option>
+            </select>
+
+            <!--radio button voor sorteren-->
+                <label><input type="radio" name="oplopend" value="1">Oplopend</label>
+                <label><input type="radio" name="oplopend" value="-1">Aflopend</label>
+
+        <div id="uitvoer"></div>
+        <script src="./js/sorteerBoeken.js" charset="utf-8"></script>
+      
+
+    </body>
+</html>
